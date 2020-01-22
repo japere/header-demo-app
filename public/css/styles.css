@@ -118,7 +118,7 @@
 }
 
 .WelcomeView{
-    background: url("/images/empty.jpg") left bottom;
+    background: url("/images/index.jpg") left bottom;
     background-size: cover;
 }
 

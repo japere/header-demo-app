@@ -5,8 +5,10 @@ block layout-content
     h1.Banner Howdy, #{userProfile.nickname}!
     div.Message
       div.Title
-        h3 Check out the headers sent to this app to create your
+        h3 Here are the headers sent to this app to create your
         h1 Team Profile
+      span.Details #{message}
+      <br>
       pre.Details=JSON.stringify(userProfile, null, "\t")
     div.NavButtons
       a(href="/logout")

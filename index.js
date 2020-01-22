@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
 
 app.get("/user", (req, res, next) => {
     var out = [];
+    var msg = ""
     var name = "";
     var ctr = 0
     for(var item in req.headers){
@@ -40,7 +41,11 @@ app.get("/user", (req, res, next) => {
             name = req.headers[item]
         }
     }
-    res.render("user", { title: "Profile", userProfile: { headers: out, nickname: name } });
+    if(ctr == 0){
+        msg = "Unfortunately, it looks like you did not send the correct headers.";
+        name = "friend"
+    }
+    res.render("user", { title: "Profile", userProfile: { headers: out, nickname: name }, message: msg });
     next()
 });
 
