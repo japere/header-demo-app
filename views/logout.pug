@@ -1,5 +1,12 @@
 extends layout
 
 block layout-content
-  div.View.LogoutView
-    h1.Banner Bye, #{userProfile.nickname}
+    div.View.LogoutView
+        h1.Banner Bye, #{userProfile.nickname}!
+        div.Message
+            div.Title
+                h3 Till next time.
+            span.Details Learn more about Application Proxy at: 
+                a(href="https://aka.ms/whyappproxy") https://aka.ms/whyappproxy
+        div.NavButtons
+                div.NavButtonClear 

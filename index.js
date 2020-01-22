@@ -50,7 +50,19 @@ app.get("/user", (req, res, next) => {
 });
 
 app.get("/logout", (req, res) => {
-    res.render("logout", { title: "Logout", userProfile: { nickname: "Friend" } });
+    var name = "";
+    var ctr = 0
+    for(var item in req.headers){
+        if(item.includes("accept-encoding")){
+            name = req.headers[item]
+            ctr++
+        }
+    }
+    if(ctr == 0){
+        name = "friend"
+    }
+    res.render("logout", { title: "Logout", userProfile: { nickname: name } });
+    next()
 });
 
 /**
