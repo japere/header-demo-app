@@ -5,9 +5,9 @@ block layout-content
     h1.Banner Howdy, #{userProfile.nickname}!
     div.Message
       div.Title
-        h3 Making Us the Best
-        h1 Teammate Profile
-      pre.Details=JSON.stringify(userProfile, null, 2)
+        h3 Check out the headers sent to this app to create your
+        h1 Team Profile
+      pre.Details=JSON.stringify(userProfile, null, "\t")
     div.NavButtons
       a(href="/logout")
         div.NavButton Log out

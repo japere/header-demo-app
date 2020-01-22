@@ -26,16 +26,33 @@ app.get("/", (req, res) => {
     res.render("index", { title: "Home" });
 });
 
-app.get("/user", (req, res) => {
-    res.render("user", { title: "Profile", userProfile: { nickname: "Friend" } });
+app.get("/user", (req, res, next) => {
+    var out = [];
+    var name = "";
+    var ctr = 0
+    for(var item in req.headers){
+        if(item.includes("accept")){
+            out.push(item + ":" + req.headers[item]);
+            ctr++;
+        }
+
+        if(item.includes("accept-encoding")){
+            name = req.headers[item]
+        }
+    }
+    res.render("user", { title: "Profile", userProfile: { headers: out, nickname: name } });
+    next()
 });
 
 app.get("/logout", (req, res) => {
-    res.send("You have logged out! See you next time!")
+    res.render("logout", { title: "Logout", userProfile: { nickname: "Friend" } });
 });
+
 /**
  * Server Activation
  */
 app.listen(port, () => {
     console.log(`Listening to requests on http://localhost:${port}`);
 });
+
+

@@ -118,11 +118,16 @@
 }
 
 .WelcomeView{
-    background: url("/images/food.jpg") left bottom;
+    background: url("/images/empty.jpg") left bottom;
     background-size: cover;
 }
 
 .UserView {
-    background: url("https://cdn.auth0.com/blog/whatabyte/patio.png") left bottom;
+    background: url("/images/welcome.jpg") left bottom;
+    background-size: cover;
+  }
+
+.LogoutView {
+    background: url("/images/goodbye.jpg") left bottom;
     background-size: cover;
   }
