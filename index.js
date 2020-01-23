@@ -32,12 +32,12 @@ app.get("/user", (req, res, next) => {
     var name = "";
     var ctr = 0
     for(var item in req.headers){
-        if(item.includes("accept")){
+        if(item.includes("ps_sso")){
             out.push(item + ":" + req.headers[item]);
             ctr++;
         }
 
-        if(item.includes("accept-encoding")){
+        if(item.includes("ps_sso_first")){
             name = req.headers[item]
         }
     }
@@ -49,11 +49,11 @@ app.get("/user", (req, res, next) => {
     next()
 });
 
-app.get("/logout", (req, res) => {
+app.get("/logout", (req, res, next) => {
     var name = "";
     var ctr = 0
     for(var item in req.headers){
-        if(item.includes("accept-encoding")){
+        if(item.includes("ps_sso_first")){
             name = req.headers[item]
             ctr++
         }
