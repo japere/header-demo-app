@@ -147,6 +147,6 @@
   }
 
 .LogoutView {
-    background: url("/images/goodbye.jpg") left bottom;
+    background: url("/images/bye.png") left bottom;
     background-size: cover;
   }
