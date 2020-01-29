@@ -5,6 +5,7 @@
  */
 const express = require("express");
 const path = require("path");
+const envconfig = require('dotenv').config();
 
 /**
  * App Variables
